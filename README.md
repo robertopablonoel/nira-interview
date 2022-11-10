@@ -1,6 +1,6 @@
 ## Get setup to develop for the take home assignment.
 
-First, fork the nira-interview repo into your own repo.
+First, fork the nira-interview repo into your own repo. You may need to install git LFS to get the clone to work.
 
 1. <b>Install Pyenv to switch between different Python versions.</b> <br>
    https://github.com/pyenv/pyenv, windows: https://github.com/pyenv-win/pyenv-win
