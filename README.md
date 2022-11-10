@@ -14,11 +14,12 @@ First, fork the nira-interview repo into your own repo.
 7. <b>Install dependencies</b> <code>poetry install</code>
 8. <b>Activate the virtual environment.</b> <code> poetry shell </code>
 9. <b>Double check that the right version of python is being used in the virtual environment.</b> <code>python --version</code>
-10. <b>Make sure that the dependencies were installed.</b> <code>poetry show</code>
+10. <b>Make sure that the dependencies were installed.</b> <code>poetry show</code>. If you're on an M1 mac, you might need to do some additional steps. Honestly, I don't have this set up yet so I don't know what those steps are, just know that you're not alone.
 11. <b>Spin up dagit. </b> <code>poetry run dagit</code>
 12. <b>Navigate to <code>localhost:3000</code>. You should see dagster running there </b>
 13. <b>In the jobs pane on the left, click the "nira_smoke_test_job" job. </b> Click "Launchpad" and then "Launch run". You should see the job print "Successfully ran smoketest".
-14. <b>Specify python interpreter in VSCode</b> You should open the setting in VScode to "Python: Select interpreter". Input your own path, which should be <code>./pipeline/.venv/bin/python</code>
+14. <b>Specify python interpreter in VSCode</b> You should open the setting in VScode to "Python: Select interpreter". Input your own path, which should be <code>./pipeline/.venv/bin/python</code>. Type this in manually, don't use the file selector.
+![image](https://user-images.githubusercontent.com/2522984/201196312-4ae65291-0155-4e55-aee2-d8401b65b8f9.png)
 15. <b>You should be ready if you get here</b>
 
 ---
