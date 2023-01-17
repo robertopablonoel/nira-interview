@@ -1,6 +1,17 @@
 ## Get setup to develop for the take home assignment.
 
-First, fork the nira-interview repo into your own repo. You may need to install git LFS to get the clone to work.
+Start off by creating a personal copy of this repository:
+
+1. create a private empty repository in your personal github named `nira-interview`
+2. run the following commands in your terminal to push the interview to your new repository, substituting in your GitHub user where appropriate:
+```shell
+git clone git@github.com:Nira-Energy/nira-interview.git
+git remote rm origin
+git remote add origin git@github.com:<your-github-user>/nira-interview.git
+git push --set-upstream origin main
+```
+
+Ok, now to get your local environment working:
 
 1. <b>Install Pyenv to switch between different Python versions.</b> <br>
    https://github.com/pyenv/pyenv, windows: https://github.com/pyenv-win/pyenv-win
@@ -12,9 +23,15 @@ First, fork the nira-interview repo into your own repo. You may need to install 
 5. <b>Configure Poetry to create .venv folders in the project</b> <code>poetry config virtualenvs.in-project true</code>
 6. <b>Navigate into the pipeline folder</b> <code>cd /nira-interview/pipeline</code>
 7. <b>Install dependencies</b> <code>poetry install</code>
+   - If you are using an M1 Mac and you run into issues during the install, you can fix that by running the following commands _before_ running `poetry install`:
+   ```shell
+   brew install geos
+   brew install proj
+   poetry run pip install --no-binary shapely==1.7.1 pyproj==3.3.0
+   ```
 8. <b>Activate the virtual environment.</b> <code> poetry shell </code>
 9. <b>Double check that the right version of python is being used in the virtual environment.</b> <code>python --version</code>
-10. <b>Make sure that the dependencies were installed.</b> <code>poetry show</code>. If you're on an M1 mac, you might need to do some additional steps. Honestly, I don't have this set up yet so I don't know what those steps are, just know that you're not alone.
+10. <b>Make sure that the dependencies were installed.</b> <code>poetry show</code>.
 11. <b>Spin up dagit. </b> <code>poetry run dagit</code>
 12. <b>Navigate to <code>localhost:3000</code>. You should see dagster running there </b>
 13. <b>In the jobs pane on the left, click the "nira_smoke_test_job" job. </b> Click "Launchpad" and then "Launch run". You should see the job print "Successfully ran smoketest".
@@ -61,7 +78,7 @@ A few constraints:
 
 Final deliverable:
 
-- Send over a link to the forked repo you made the modifications in.
+- Share your private repository with your interviewer, and send over a link with a PR showing your modifications from the main branch.
 - Inside <code>raw_buses_to_run.py</code>, comment out line 4, and uncomment line 5. This will switch the raw buses csv to a new csv. You can go look in the CSVs, the only difference is one additional bus in the new one. Remember, there will only ever be bus additions in the new csv.
 - There should be only one new file inside the /output folder that contains all the buses results for the buses defined in <code>new_raw_buses.csv</code>. You should delete the original csv in the output folder that the repo started with. There should never be 2 csv's in the output folder.
 - Any new ops you need should be added to <code>interview_job.py</code> and also be implemented in their own file in the /ops folder.
