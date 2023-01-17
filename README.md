@@ -23,12 +23,6 @@ Ok, now to get your local environment working:
 5. <b>Configure Poetry to create .venv folders in the project</b> <code>poetry config virtualenvs.in-project true</code>
 6. <b>Navigate into the pipeline folder</b> <code>cd /nira-interview/pipeline</code>
 7. <b>Install dependencies</b> <code>poetry install</code>
-   - If you are using an M1 Mac and you run into issues during the install, you can fix that by running the following commands _before_ running `poetry install`:
-   ```shell
-   brew install geos
-   brew install proj
-   poetry run pip install --no-binary shapely==1.7.1 pyproj==3.3.0
-   ```
 8. <b>Activate the virtual environment.</b> <code> poetry shell </code>
 9. <b>Double check that the right version of python is being used in the virtual environment.</b> <code>python --version</code>
 10. <b>Make sure that the dependencies were installed.</b> <code>poetry show</code>.
